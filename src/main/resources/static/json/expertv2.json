@@ -1,0 +1,48 @@
+{
+    "DomainName": "EXPERT",
+    "DomainNumber": "00",
+    "data": [
+        {
+            "Environment": "Integration",
+            "Environment_folder": "inta00",
+            "Admin_server_name": "bamberg.cc.cec.eu.int",
+            "Admin_server_port": 15020
+        },
+        {
+            "Environment": "Development",
+            "Environment_folder": "deva00",
+            "Admin_server_name": "regensburg.cc.cec.eu.int",
+            "Admin_server_port": 11020
+        },
+        {
+            "Environment": "Test",
+            "Environment_folder": "testa00",
+            "Admin_server_name": "bonn.cc.cec.eu.int",
+            "Admin_server_port": 12020
+        },
+        {
+            "Environment": "Pre-Production",
+            "Environment_folder": "preproda00",
+            "Admin_server_name": "stuttgart.cc.cec.eu.int",
+            "Admin_server_port": 13020
+        },
+        {
+            "Environment": "Production",
+            "Environment_folder": "proda00",
+            "Admin_server_name": "bern.cc.cec.eu.int",
+            "Admin_server_port": 10020
+        },
+        {
+            "Environment": "Training",
+            "Environment_folder": "traia00",
+            "Admin_server_name": "potsdam.cc.cec.eu.int",
+            "Admin_server_port": 14020
+        },
+        {
+            "Environment": "Stress-Test",
+            "Environment_folder": "stressc02",
+            "Admin_server_name": "kotor.cc.cec.eu.int",
+            "Admin_server_port": 18220
+        }
+    ]
+}
