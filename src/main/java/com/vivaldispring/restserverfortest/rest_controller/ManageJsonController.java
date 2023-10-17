@@ -3,15 +3,14 @@ package com.vivaldispring.restserverfortest.rest_controller;
 import com.vivaldispring.restserverfortest.data_json.DomainInfo;
 import com.vivaldispring.restserverfortest.data_json.EnvironmentInfo;
 import com.vivaldispring.restserverfortest.services.LoadJsonFilesToJavaClass;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.nio.charset.StandardCharsets;
+import java.util.*;
 
 @RestController
 public class ManageJsonController {
@@ -131,6 +130,27 @@ public class ManageJsonController {
         response.put("New folder: ", folder);
         response.put("New JSON file: ", domainInfo);
 
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/delete/{domain}/{folder}")
+    public ResponseEntity<?> deleteFolder(
+            @PathVariable(value = "domain") String domain,
+            @PathVariable(value = "folder") String folder,
+            @RequestHeader HttpHeaders headers
+            ) throws IOException {
+
+        response.clear();
+
+        List<String> auth = headers.get(HttpHeaders.AUTHORIZATION);
+
+        String base64Credentials = auth.get(0).substring("Basic".length()).trim();
+        byte[] credDecoded = Base64.getDecoder().decode(base64Credentials);
+        String credentials = new String(credDecoded, StandardCharsets.UTF_8);
+        // credentials = username:password
+        final String[] values = credentials.split(":", 2);
+
+        response.put("user: ", values);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 }
