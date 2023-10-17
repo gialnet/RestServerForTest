@@ -26,5 +26,5 @@ admin_server_port:=23400 \
 admin_server_name=algeciras.cc.cec.eu.int
 
 ### delete server
-curl -u peanton:pass -H 'Accept: application/json' -X DELETE localhost:6969/delete/00/folder
-http -a peanton:pass DELETE localhost:6969/delete/00/folder
+curl -u peanton:pass -H 'Accept: application/json' -X DELETE localhost:6969/delete/00/stressc02
+http -a peanton:pass DELETE localhost:6969/delete/00/stressc02

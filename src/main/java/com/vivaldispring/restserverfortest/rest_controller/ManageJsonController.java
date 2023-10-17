@@ -20,6 +20,7 @@ public class ManageJsonController {
 
     List<EnvironmentInfo> infoList = new ArrayList<>();
 
+    AuthUserPass authUserPass = new AuthUserPass();
     public ManageJsonController(LoadJsonFilesToJavaClass filesToJavaClass) {
         this.filesToJavaClass = filesToJavaClass;
     }
@@ -43,9 +44,16 @@ public class ManageJsonController {
 
         // check if bodyPatch exist
         String domain_code = bodyPatch.getDomain();
+        if (domain_code==null){
+
+            response.put("info: ", "You must provide domain and folder in the body request");
+            return new ResponseEntity<>(response, HttpStatus.OK);
+        }
+
 
         // select file in function of domain code
-        DomainInfo domainInfo = filesToJavaClass.loadDomainInfo("expertv2.json");
+        DomainInfo domainInfo = filesToJavaClass.loadDomainInfo(
+                JsonFileNames.getNameByNumber(DomainCodes.EXPERT.code));
 
         // send invalid resource if not exist
         if (domainInfo==null)
@@ -99,8 +107,15 @@ public class ManageJsonController {
         // check if bodyPatch exist
         String domain_code = bodyPut.getDomain();
 
+        if (domain_code==null){
+
+            response.put("info: ", "You must provide domain, environment_folder, admin_server_port and admin_server_name in the body request");
+            return new ResponseEntity<>(response, HttpStatus.OK);
+        }
+
         // select file in function of domain code
-        DomainInfo domainInfo = filesToJavaClass.loadDomainInfo("expertv2.json");
+        DomainInfo domainInfo = filesToJavaClass.loadDomainInfo(
+                JsonFileNames.getNameByNumber(DomainCodes.EXPERT.code));
 
         // send invalid resource if not exist
         if (domainInfo==null)
@@ -119,6 +134,7 @@ public class ManageJsonController {
                             .Environment_folder(bodyPut.getEnvironment_folder())
                             .Admin_server_name(bodyPut.getAdmin_server_name())
                             .Admin_server_port(bodyPut.getAdmin_server_port()).build();
+
                     return i;
                 }).toList();
 
@@ -133,6 +149,15 @@ public class ManageJsonController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
+    /**
+     * Delete one server in the json file.
+     *
+     * @param domain domain code
+     * @param folder folder name to be deleted
+     * @param headers information about user and password
+     * @return status of the operation
+     * @throws IOException file not found
+     */
     @DeleteMapping("/delete/{domain}/{folder}")
     public ResponseEntity<?> deleteFolder(
             @PathVariable(value = "domain") String domain,
@@ -142,15 +167,58 @@ public class ManageJsonController {
 
         response.clear();
 
-        List<String> auth = headers.get(HttpHeaders.AUTHORIZATION);
+        if (headers.get(HttpHeaders.AUTHORIZATION)!=null)
+        {
+            decodeAuth(headers.get(HttpHeaders.AUTHORIZATION).get(0));
+        }
+        else {
 
-        String base64Credentials = auth.get(0).substring("Basic".length()).trim();
+            response.put("Auth.: ", "You must provide an user and password valid");
+            return new ResponseEntity<>(response, HttpStatus.UNAUTHORIZED);
+        }
+
+
+        // select file in function of domain code
+        DomainInfo domainInfo = filesToJavaClass.loadDomainInfo(
+                JsonFileNames.getNameByNumber(domain));
+
+        // send invalid resource if not exist
+        if (domainInfo==null)
+        {
+            response.put("domain code not found: ", domain);
+            return new ResponseEntity<>(response, HttpStatus.FAILED_DEPENDENCY);
+        }
+
+        // update json file with new port value
+        infoList = domainInfo.getData().stream()
+                .filter(i-> !i.getEnvironment_folder().equals(folder))
+                .toList();
+
+        domainInfo.setData(infoList);
+        response.put("New JSON file: ", domainInfo);
+        response.put("Auth.: ", authUserPass);
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+    /**
+     * Decode user and password for basic authorization
+     * @param auth HttpHeaders.AUTHORIZATION
+     */
+    private void decodeAuth(String auth){
+
+        if (auth==null){
+
+            authUserPass.setUser("");
+            authUserPass.setPassword("");
+            return;
+        }
+        String base64Credentials = auth.substring("Basic".length()).trim();
         byte[] credDecoded = Base64.getDecoder().decode(base64Credentials);
         String credentials = new String(credDecoded, StandardCharsets.UTF_8);
+
         // credentials = username:password
         final String[] values = credentials.split(":", 2);
-
-        response.put("user: ", values);
-        return new ResponseEntity<>(response, HttpStatus.OK);
+        authUserPass.setUser(values[0]);
+        authUserPass.setPassword(values[1]);
     }
 }
