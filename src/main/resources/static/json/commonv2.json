@@ -1,0 +1,48 @@
+{
+    "DomainName": "COMMON",
+    "DomainNumber": "05",
+    "data": [
+        {
+            "Environment": "Integration",
+            "Environment_folder": "intf05",
+            "Admin_server_name": "nantes.cc.cec.eu.int",
+            "Admin_server_port": 15520
+        },
+        {
+            "Environment": "Development",
+            "Environment_folder": "devf05",
+            "Admin_server_name": "tours.cc.cec.eu.int",
+            "Admin_server_port": 11520
+        },
+        {
+            "Environment": "Test",
+            "Environment_folder": "testf05",
+            "Admin_server_name": "bayonne.cc.cec.eu.int",
+            "Admin_server_port": 12520
+        },
+        {
+            "Environment": "Pre-Production",
+            "Environment_folder": "preprodf05",
+            "Admin_server_name": "bidart.cc.cec.eu.int",
+            "Admin_server_port": 13520
+        },
+        {
+            "Environment": "Production",
+            "Environment_folder": "prodf05",
+            "Admin_server_name": "dakar.cc.cec.eu.int",
+            "Admin_server_port": 10520
+        },
+        {
+            "Environment": "Training",
+            "Environment_folder": "traif05",
+            "Admin_server_name": "limoges.cc.cec.eu.int",
+            "Admin_server_port": 14520
+        },
+        {
+            "Environment": "Stress-Test",
+            "Environment_folder": "delf05",
+            "Admin_server_name": "caen.cc.cec.eu.int",
+            "Admin_server_port": 16520
+        }
+    ]
+}

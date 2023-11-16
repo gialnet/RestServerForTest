@@ -1,0 +1,54 @@
+{
+    "DomainName": "SEP",
+    "DomainNumber": "09",
+    "data": [
+        {
+            "Environment": "Development",
+            "Environment_folder": "devj09",
+            "Admin_server_name": "corinth.cc.cec.eu.int",
+            "Admin_server_port": 11920
+        },
+        {
+            "Environment": "Development",
+            "Environment_folder": "devj09cc",
+            "Admin_server_name": "corinth.cc.cec.eu.int",
+            "Admin_server_port": 11970
+        },
+        {
+            "Environment": "Test",
+            "Environment_folder": "testj09",
+            "Admin_server_name": "patras.cc.cec.eu.int",
+            "Admin_server_port": 12920
+        },
+        {
+            "Environment": "Test",
+            "Environment_folder": "testj09cc",
+            "Admin_server_name": "patras.cc.cec.eu.int",
+            "Admin_server_port": 12970
+        },
+        {
+            "Environment": "Pre-Production",
+            "Environment_folder": "preprodj09",
+            "Admin_server_name": "argos.cc.cec.eu.int",
+            "Admin_server_port": 13920
+        },
+        {
+            "Environment": "Pre-Production",
+            "Environment_folder": "preprodj09cc",
+            "Admin_server_name": "argos.cc.cec.eu.int",
+            "Admin_server_port": 13970
+        },
+        {
+            "Environment": "Production",
+            "Environment_folder": "prodj09",
+            "Admin_server_name": "athens.cc.cec.eu.int",
+            "Admin_server_port": 10920
+        },
+        {
+            "Environment": "Production",
+            "Environment_folder": "prodj09cc",
+            "Admin_server_name": "athens.cc.cec.eu.int",
+            "Admin_server_port": 10970
+        }
+    ]
+}

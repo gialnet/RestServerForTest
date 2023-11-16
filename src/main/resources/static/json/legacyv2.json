@@ -1,0 +1,24 @@
+{
+    "DomainName": "LEGACY",
+    "DomainNumber": "04",
+    "data": [
+        {
+            "Environment": "Development",
+            "Environment_folder": "deve04",
+            "Admin_server_name": "antwerp.cc.cec.eu.int",
+            "Admin_server_port": 11420
+        },
+        {
+            "Environment": "Test",
+            "Environment_folder": "teste04",
+            "Admin_server_name": "gembloux.cc.cec.eu.int",
+            "Admin_server_port": 12420
+        },
+        {
+            "Environment": "Production",
+            "Environment_folder": "prode04",
+            "Admin_server_name": "prague.cc.cec.eu.int",
+            "Admin_server_port": 10420
+        }
+    ]
+}

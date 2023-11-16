@@ -1,0 +1,90 @@
+{
+    "DomainName": "OPSYSTR3",
+    "DomainNumber": "10",
+    "data": [
+        {
+            "Environment": "Integration",
+            "Environment_folder": "intk10",
+            "Admin_server_name": "novo-mesto.cc.cec.eu.int",
+            "Admin_server_port": 35020
+        },
+        {
+            "Environment": "Integration",
+            "Environment_folder": "intk10cc",
+            "Admin_server_name": "novo-mesto.cc.cec.eu.int",
+            "Admin_server_port": 35070
+        },
+        {
+            "Environment": "Development",
+            "Environment_folder": "devk10",
+            "Admin_server_name": "bled.cc.cec.eu.int",
+            "Admin_server_port": 31020
+        },
+        {
+            "Environment": "Development",
+            "Environment_folder": "devk10cc",
+            "Admin_server_name": "bled.cc.cec.eu.int",
+            "Admin_server_port": 31070
+        },
+        {
+            "Environment": "Test",
+            "Environment_folder": "testk10",
+            "Admin_server_name": "ptuj.cc.cec.eu.int",
+            "Admin_server_port": 32020
+        },
+        {
+            "Environment": "Test",
+            "Environment_folder": "testk10cc",
+            "Admin_server_name": "ptuj.cc.cec.eu.int",
+            "Admin_server_port": 32070
+        },
+        {
+            "Environment": "Pre-Production",
+            "Environment_folder": "preprodk10",
+            "Admin_server_name": "celje.cc.cec.eu.int",
+            "Admin_server_port": 33020
+        },
+        {
+            "Environment": "Pre-Production",
+            "Environment_folder": "preprodk10cc",
+            "Admin_server_name": "celje.cc.cec.eu.int",
+            "Admin_server_port": 33070
+        },
+        {
+            "Environment": "Production",
+            "Environment_folder": "prodk10",
+            "Admin_server_name": "sarajevo.cc.cec.eu.int",
+            "Admin_server_port": 30020
+        },
+        {
+            "Environment": "Production",
+            "Environment_folder": "prodk10cc",
+            "Admin_server_name": "sarajevo.cc.cec.eu.int",
+            "Admin_server_port": 30070
+        },
+        {
+            "Environment": "Training",
+            "Environment_folder": "traik10",
+            "Admin_server_name": "turjak.cc.cec.eu.int",
+            "Admin_server_port": 34020
+        },
+        {
+            "Environment": "Training",
+            "Environment_folder": "traik10cc",
+            "Admin_server_name": "turjak.cc.cec.eu.int",
+            "Admin_server_port": 34070
+        },
+        {
+            "Environment": "Stress-Test",
+            "Environment_folder": "dltk10",
+            "Admin_server_name": "rogla.cc.cec.eu.int",
+            "Admin_server_port": 37020
+        },
+        {
+            "Environment": "Stress-Test",
+            "Environment_folder": "dltk10cc",
+            "Admin_server_name": "rogla.cc.cec.eu.int",
+            "Admin_server_port": 37070
+        }
+    ]
+}

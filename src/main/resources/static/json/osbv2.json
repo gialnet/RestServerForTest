@@ -1,0 +1,48 @@
+{
+    "DomainName": "OSB",
+    "DomainNumber": "11",
+    "data": [
+        {
+            "Environment": "Integration",
+            "Environment_folder": "intsb",
+            "Admin_server_name": "namur.cc.cec.eu.int",
+            "Admin_server_port": 25020
+        },
+        {
+            "Environment": "Development",
+            "Environment_folder": "devsb",
+            "Admin_server_name": "namur.cc.cec.eu.int",
+            "Admin_server_port": 21020
+        },
+        {
+            "Environment": "Test",
+            "Environment_folder": "testsb",
+            "Admin_server_name": "hamburg.cc.cec.eu.int",
+            "Admin_server_port": 22020
+        },
+        {
+            "Environment": "Pre-Production",
+            "Environment_folder": "preprodsb",
+            "Admin_server_name": "kiel.cc.cec.eu.int",
+            "Admin_server_port": 23020
+        },
+        {
+            "Environment": "Production",
+            "Environment_folder": "prodsb",
+            "Admin_server_name": "riga.cc.cec.eu.int",
+            "Admin_server_port": 20020
+        },
+        {
+            "Environment": "Training",
+            "Environment_folder": "traisb",
+            "Admin_server_name": "lubeck.cc.cec.eu.int",
+            "Admin_server_port": 24020
+        },
+        {
+            "Environment": "Stress-Test",
+            "Environment_folder": "dltsb",
+            "Admin_server_name": "vogar.cc.cec.eu.int",
+            "Admin_server_port": 25120
+        }
+    ]
+}

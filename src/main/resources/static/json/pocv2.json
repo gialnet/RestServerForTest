@@ -1,0 +1,48 @@
+{
+    "DomainName": "POC",
+    "DomainNumber": "08",
+    "data": [
+        {
+            "Environment": "Development",
+            "Environment_folder": "devi08",
+            "Cluster_name": "poc",
+            "Admin_server_name": "bati.cc.cec.eu.int",
+            "Admin_server_port": 11820
+        },
+        {
+            "Environment": "Development",
+            "Environment_folder": "devi08cc",
+            "Cluster_name": "compass",
+            "Admin_server_name": "bati.cc.cec.eu.int",
+            "Admin_server_port": 11870
+        },
+        {
+            "Environment": "Pre-Production",
+            "Environment_folder": "preprodi08",
+            "Cluster_name": "poc",
+            "Admin_server_name": "bender.cc.cec.eu.int",
+            "Admin_server_port": 13820
+        },
+        {
+            "Environment": "Pre-Production",
+            "Environment_folder": "preprodi08cc",
+            "Cluster_name": "compass",
+            "Admin_server_name": "bender.cc.cec.eu.int",
+            "Admin_server_port": 13870
+        },
+        {
+            "Environment": "Production",
+            "Environment_folder": "prodi08",
+            "Cluster_name": "poc",
+            "Admin_server_name": "nairobi.cc.cec.eu.int",
+            "Admin_server_port": 10820
+        },
+        {
+            "Environment": "Production",
+            "Environment_folder": "prodi08cc",
+            "Cluster_name": "compass",
+            "Admin_server_name": "nairobi.cc.cec.eu.int",
+            "Admin_server_port": 10870
+        }
+    ]
+}

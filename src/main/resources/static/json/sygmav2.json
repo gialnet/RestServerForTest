@@ -1,0 +1,42 @@
+{
+    "DomainName": "SYGMA",
+    "DomainNumber": "01",
+    "data": [
+        {
+            "Environment": "Integration",
+            "Environment_folder": "intb01",
+            "Admin_server_name": "leiden.cc.cec.eu.int",
+            "Admin_server_port": 15120
+        },
+        {
+            "Environment": "Development",
+            "Environment_folder": "devb01",
+            "Admin_server_name": "utrecht.cc.cec.eu.int",
+            "Admin_server_port": 11120
+        },
+        {
+            "Environment": "Test",
+            "Environment_folder": "testb01",
+            "Admin_server_name": "maastricht.cc.cec.eu.int",
+            "Admin_server_port": 12120
+        },
+        {
+            "Environment": "Pre-Production",
+            "Environment_folder": "preprodb01",
+            "Admin_server_name": "delft.cc.cec.eu.int",
+            "Admin_server_port": 13120
+        },
+        {
+            "Environment": "Production",
+            "Environment_folder": "prodb01",
+            "Admin_server_name": "paris.cc.cec.eu.int",
+            "Admin_server_port": 10120
+        },
+        {
+            "Environment": "Training",
+            "Environment_folder": "traib01",
+            "Admin_server_name": "tiel.cc.cec.eu.int",
+            "Admin_server_port": 14120
+        }
+    ]
+}

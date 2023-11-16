@@ -1,0 +1,54 @@
+{
+    "DomainName": "CORE",
+    "DomainNumber": "06",
+    "data": [
+        {
+            "Environment": "Integration",
+            "Environment_folder": "intg06cc",
+            "Admin_server_name": "goldap.cc.cec.eu.int",
+            "Admin_server_port": 15670
+        },
+        {
+            "Environment": "Development",
+            "Environment_folder": "devg06",
+            "Admin_server_name": "krakow.cc.cec.eu.int",
+            "Admin_server_port": 11620
+        },
+        {
+            "Environment": "Development",
+            "Environment_folder": "devg06cc",
+            "Admin_server_name": "krakow.cc.cec.eu.int",
+            "Admin_server_port": 11670
+        },
+        {
+            "Environment": "Test",
+            "Environment_folder": "testg06cc",
+            "Admin_server_name": "leszno.cc.cec.eu.int",
+            "Admin_server_port": 12670
+        },
+        {
+            "Environment": "Pre-Production",
+            "Environment_folder": "preprodg06cc",
+            "Admin_server_name": "krosno.cc.cec.eu.int",
+            "Admin_server_port": 13670
+        },
+        {
+            "Environment": "Production",
+            "Environment_folder": "prodg06cc",
+            "Admin_server_name": "plock.cc.cec.eu.int",
+            "Admin_server_port": 10670
+        },
+        {
+            "Environment": "Training",
+            "Environment_folder": "traig06cc",
+            "Admin_server_name": "stargard.cc.cec.eu.int",
+            "Admin_server_port": 14670
+        },
+        {
+            "Environment": "Stress-Test",
+            "Environment_folder": "dltg06cc",
+            "Admin_server_name": "chelm.cc.cec.eu.int",
+            "Admin_server_port": 17670
+        }
+    ]
+}

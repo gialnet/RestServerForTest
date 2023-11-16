@@ -1,0 +1,30 @@
+{
+    "DomainName": "PDM",
+    "DomainNumber": "03",
+    "data": [
+        {
+            "Environment": "Development",
+            "Environment_folder": "devc06",
+            "Admin_server_name": "shibataea.cc.cec.eu.int",
+            "Admin_server_port": 11620
+        },
+        {
+            "Environment": "Test",
+            "Environment_folder": "testd03",
+            "Admin_server_name": "porto.cc.cec.eu.int",
+            "Admin_server_port": 12320
+        },
+        {
+            "Environment": "Pre-Production",
+            "Environment_folder": "preprodd03",
+            "Admin_server_name": "coimbra.cc.cec.eu.int",
+            "Admin_server_port": 13320
+        },
+        {
+            "Environment": "Production",
+            "Environment_folder": "prodd03",
+            "Admin_server_name": "rome.cc.cec.eu.int",
+            "Admin_server_port": 10320
+        }
+    ]
+}

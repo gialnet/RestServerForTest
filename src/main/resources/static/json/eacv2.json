@@ -1,0 +1,54 @@
+{
+    "DomainName": "EAC",
+    "DomainNumber": "07",
+    "data": [
+        {
+            "Environment": "Development",
+            "Environment_folder": "devh07",
+            "Admin_server_name": "birgu.cc.cec.eu.int",
+            "Admin_server_port": 11720
+        },
+        {
+            "Environment": "Development",
+            "Environment_folder": "devh07cc",
+            "Admin_server_name": "birgu.cc.cec.eu.int",
+            "Admin_server_port": 11770
+        },
+        {
+            "Environment": "Test",
+            "Environment_folder": "testh07",
+            "Admin_server_name": "mdina.cc.cec.eu.int",
+            "Admin_server_port": 12720
+        },
+        {
+            "Environment": "Test",
+            "Environment_folder": "testh07cc",
+            "Admin_server_name": "mdina.cc.cec.eu.int",
+            "Admin_server_port": 12770
+        },
+        {
+            "Environment": "Pre-Production",
+            "Environment_folder": "preprodh07",
+            "Admin_server_name": "mosta.cc.cec.eu.int",
+            "Admin_server_port": 13720
+        },
+        {
+            "Environment": "Pre-Production",
+            "Environment_folder": "preprodh07cc",
+            "Admin_server_name": "mosta.cc.cec.eu.int",
+            "Admin_server_port": 13770
+        },
+        {
+            "Environment": "Production",
+            "Environment_folder": "prodh07",
+            "Admin_server_name": "valletta.cc.cec.eu.int",
+            "Admin_server_port": 10720
+        },
+        {
+            "Environment": "Production",
+            "Environment_folder": "prodh07cc",
+            "Admin_server_name": "valletta.cc.cec.eu.int",
+            "Admin_server_port": 10770
+        }
+    ]
+}

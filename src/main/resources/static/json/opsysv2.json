@@ -1,0 +1,91 @@
+{
+    "DomainName": "OPSYS",
+    "DomainNumber": "02",
+    "data": [
+        {
+            "Environment": "Integration",
+            "Environment_folder": "intc02",
+            "Admin_server_name": "wolfsburg.cc.cec.eu.int",
+            "Admin_server_port": 15220
+        },
+        {
+            "Environment": "Integration",
+            "Environment_folder": "intc02cc",
+            "Admin_server_name": "wolfsburg.cc.cec.eu.int",
+            "Admin_server_port": 15270
+        },
+        {
+            "Environment": "Development",
+            "Environment_folder": "devc02",
+            "Cluster_name": "expert",
+            "Admin_server_name": "shibataea.cc.cec.eu.int",
+            "Admin_server_port": 11220
+        },
+        {
+            "Environment": "Development",
+            "Environment_folder": "devc02cc",
+            "Admin_server_name": "shibataea.cc.cec.eu.int",
+            "Admin_server_port": 11270
+        },
+        {
+            "Environment": "Test",
+            "Environment_folder": "testc02",
+            "Admin_server_name": "munich.cc.cec.eu.int",
+            "Admin_server_port": 12220
+        },
+        {
+            "Environment": "Test",
+            "Environment_folder": "testc02cc",
+            "Admin_server_name": "munich.cc.cec.eu.int",
+            "Admin_server_port": 12270
+        },
+        {
+            "Environment": "Pre-Production",
+            "Environment_folder": "preprodc02",
+            "Admin_server_name": "freiburg.cc.cec.eu.int",
+            "Admin_server_port": 13220
+        },
+        {
+            "Environment": "Pre-Production",
+            "Environment_folder": "preprodc02cc",
+            "Admin_server_name": "freiburg.cc.cec.eu.int",
+            "Admin_server_port": 13270
+        },
+        {
+            "Environment": "Production",
+            "Environment_folder": "prodc02",
+            "Admin_server_name": "talinn.cc.cec.eu.int",
+            "Admin_server_port": 10220
+        },
+        {
+            "Environment": "Production",
+            "Environment_folder": "prodc02cc",
+            "Admin_server_name": "talinn.cc.cec.eu.int",
+            "Admin_server_port": 10270
+        },
+        {
+            "Environment": "Training",
+            "Environment_folder": "traic02",
+            "Admin_server_name": "erfurt.cc.cec.eu.int",
+            "Admin_server_port": 14220
+        },
+        {
+            "Environment": "Training",
+            "Environment_folder": "traic02cc",
+            "Admin_server_name": "erfurt.cc.cec.eu.int",
+            "Admin_server_port": 14270
+        },
+        {
+            "Environment": "Stress-Test",
+            "Environment_folder": "dltc02",
+            "Admin_server_name": "budva.cc.cec.eu.int",
+            "Admin_server_port": 17220
+        },
+        {
+            "Environment": "Stress-Test",
+            "Environment_folder": "dltc02cc",
+            "Admin_server_name": "budva.cc.cec.eu.int",
+            "Admin_server_port": 17270
+        }
+    ]
+}
