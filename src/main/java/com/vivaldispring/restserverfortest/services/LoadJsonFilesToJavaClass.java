@@ -3,7 +3,6 @@ package com.vivaldispring.restserverfortest.services;
 import com.google.gson.Gson;
 import com.vivaldispring.restserverfortest.data_json.DomainInfo;
 import com.vivaldispring.restserverfortest.data_json.EnvironmentInfo;
-import com.vivaldispring.restserverfortest.repositories.DomainRepo;
 import org.apache.commons.io.IOUtils;
 import org.springframework.aot.hint.annotation.RegisterReflectionForBinding;
 import org.springframework.core.io.Resource;
@@ -20,14 +19,13 @@ import java.util.List;
 public class LoadJsonFilesToJavaClass {
 
     private final ResourceLoader resourceLoader;
-    private final DomainRepo domainRepo;
     private Gson gson = new Gson();
     private DomainInfo  domainInfo;
 
-    public LoadJsonFilesToJavaClass(ResourceLoader resourceLoader, DomainRepo domainRepo) {
+    public LoadJsonFilesToJavaClass(ResourceLoader resourceLoader) {
         this.resourceLoader = resourceLoader;
-        this.domainRepo = domainRepo;
     }
+
 
     /**
      * Load json file from the file system and put into List of java class domain info
