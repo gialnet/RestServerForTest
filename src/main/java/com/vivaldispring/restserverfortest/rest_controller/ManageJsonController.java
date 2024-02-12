@@ -3,14 +3,19 @@ package com.vivaldispring.restserverfortest.rest_controller;
 import com.google.gson.Gson;
 import com.vivaldispring.restserverfortest.data_json.DomainInfo;
 import com.vivaldispring.restserverfortest.data_json.EnvironmentInfo;
-import com.vivaldispring.restserverfortest.data_json.elasticDefaultUsers;
 import com.vivaldispring.restserverfortest.services.LoadJsonFilesToJavaClass;
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.ResourceLoader;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 
@@ -21,22 +26,31 @@ public class ManageJsonController {
     Map<String, Object> response = new HashMap<>();
 
     List<EnvironmentInfo> infoList = new ArrayList<>();
+    private final ResourceLoader resourceLoader;
 
     AuthUserPass authUserPass = new AuthUserPass();
-    public ManageJsonController(LoadJsonFilesToJavaClass filesToJavaClass) {
+    public ManageJsonController(LoadJsonFilesToJavaClass filesToJavaClass, ResourceLoader resourceLoader) {
         this.filesToJavaClass = filesToJavaClass;
+        this.resourceLoader = resourceLoader;
     }
 
+    /**
+     * Change key for an elastic search user
+     * @param user user name
+     * @param key key to change
+     * @return
+     * @throws IOException
+     */
     @PatchMapping("/elastic/update/{user}/{key}")
     public ResponseEntity<?> updateUser(@PathVariable(value = "user") String user,
                                         @PathVariable(value = "key") String key) throws IOException {
 
         response.clear();
 
-        // check if bodyPatch exist
-
-        // select file in function of domain code
-        elasticDefaultUsers defaultUsers = filesToJavaClass.loadDefaultUsers();
+        // load the json file
+        Resource resource = resourceLoader.getResource("classpath:/static/json/elastic_users.json");
+        InputStream jsonfile = resource.getInputStream();
+        String defaultUsers = IOUtils.toString(jsonfile, StandardCharsets.UTF_8);
 
         // send invalid resource if not exist
         if (defaultUsers==null)
@@ -45,17 +59,26 @@ public class ManageJsonController {
             return new ResponseEntity<>(response, HttpStatus.FAILED_DEPENDENCY);
         }
 
-        String jsonString = "{\"data\":{\"apm_system\":\"HFh9dpRVDob7lO7Tweru\",\"logstash_system\":\"ftdEvu2PFLeRatbK7H7I\",\"beats_system\":\"MXPYstz0fTRyCuv4XmoR\",\"remote_monitoring_user\":\"qbL4ZGHzNdb8VUNbx1mp\",\"kibana_system\":\"2A8N3LNHcTXw86OfK3cG\",\"elastic\":\"YxTGmigGkQ377qnNlv2G\",\"kibana\":\"2A8N3LNHcTXw86OfK3cG\"}}";
         Gson gson = new Gson();
-        Map<String, Map<String, String>> map = gson.fromJson(jsonString, Map.class);
+        Map<String, Map<String, String>> map = gson.fromJson(defaultUsers, Map.class);
         Map<String, String> data = map.get("data");
-        System.out.println(data);
+        //System.out.println(data);
 
         // save to json file
 
+        if (data.containsKey(user))
+        {
+            data.put(user, key);
+            map.put("data", data);
+            System.out.println(data);
+        }
+
+        String updateJson = gson.toJson(map);
+        FileUtils.writeStringToFile(new File("src/main/resources/static/json/elastic_users.json"), updateJson, "UTF-8");
+
         //response.put("bodyPatch: ", bodyPatch);
         //response.put("New port: ", port);
-        //response.put("New JSON file: ", domainInfo);
+        response.put("New JSON file: ", map);
 
         return new ResponseEntity<>(response, HttpStatus.OK);
     }

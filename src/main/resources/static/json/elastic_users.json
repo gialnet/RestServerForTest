@@ -1,11 +1,1 @@
-{
-    "data": {
-        "apm_system": "HFh9dpRVDob7lO7Tweru",
-        "logstash_system": "ftdEvu2PFLeRatbK7H7I",
-        "beats_system": "MXPYstz0fTRyCuv4XmoR",
-        "remote_monitoring_user": "qbL4ZGHzNdb8VUNbx1mp",
-        "kibana_system": "2A8N3LNHcTXw86OfK3cG",
-        "elastic": "YxTGmigGkQ377qnNlv2G",
-        "kibana": "2A8N3LNHcTXw86OfK3cG"
-    }
-}
+{"data":{"apm_system":"HFh9dpRVDob7lO7Tweru","logstash_system":"ftdEvu2PFLeRatbK7H7I","beats_system":"juan","remote_monitoring_user":"qbL4ZGHzNdb8VUNbx1mp","kibana_system":"2A8N3LNHcTXw86OfK3cG","elastic":"YxTGmigGkQ377qnNlv2G","kibana":"pepe"}}
